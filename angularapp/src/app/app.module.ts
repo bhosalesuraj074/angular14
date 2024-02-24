@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 
+
+
 @NgModule({
   declarations: [
-    AppComponent,
-    TestComponent,
+    AppComponent, 
+    TestComponent, 
     DatabindingComponent
   ],
   imports: [
