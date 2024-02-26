@@ -9,3 +9,14 @@
 
 
 <button [disabled]="isDisabled" (click)="disableButton()" >ClickMe</button>
+<hr>
+
+<input type="text" (blur)="onNameChange($event)">
+
+<h2>{{typedName}}</h2> 
+
+<hr>
+<h3>2 way</h3>
+<input type="text" placeholder="Enter name" [(ngModel)]="name"  >
+
+{{name}}

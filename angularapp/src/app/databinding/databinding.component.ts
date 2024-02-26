@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./databinding.component.css']
 })
 export class DatabindingComponent implements OnInit {
-
+  typedName:string='';
   firstName: string = "Jack";
   lastName: string = "Sparrow";
-
+  name: string = 'Angular';
   employee = {
     id: '101',
     name: 'jack'
@@ -27,5 +27,15 @@ export class DatabindingComponent implements OnInit {
 
   getFullName():string {
     return this.firstName + ' ' + this.lastName;
+  }
+
+  onNameChange(event: any){
+
+    console.log(event);
+    
+    let val = event.target.value;
+ this.typedName = event.target.value; // codemind
+  
+  // api
   }
 }
