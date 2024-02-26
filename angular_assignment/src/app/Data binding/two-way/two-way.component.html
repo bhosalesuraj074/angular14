@@ -1,1 +1,9 @@
 <h1>two-way works!</h1>
+
+<div class="centered-box">
+
+    <input type="text" name="" id="" [(ngModel)]="userName">
+    <h3>{{userName}}</h3>
+    <button type="button" (click)="resetName()" [disabled]="userName == '' ">Reset</button>
+
+</div>

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwoWayComponent implements OnInit {
 
+  userName:string ='Suraj';
+  isDisable:boolean  = this.userName.length <= 0 ? false : true; 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+   
+  resetName(){
+    this.userName='';
+  }
 }
