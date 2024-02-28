@@ -16,5 +16,9 @@ export class ParentComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  msgFromChild(childMsg:string){
+    console.log('message from the child', childMsg);
+    
+  }
 
 }
