@@ -6,6 +6,16 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { FormsModule } from '@angular/forms';
+import { NgifComponent } from './Directive/structural/ngif/ngif.component';
+import { ParentComponent } from './Property Decorator/parent/parent.component';
+import { ChildComponent } from './Property Decorator/child/child.component';
+import { NgforComponent } from './Directive/structural/ngfor/ngfor.component';
+import { NgSwitchComponent } from './Directive/structural/ng-switch/ng-switch.component';
+import { AttributeComponent } from './Directive/attribute/attribute.component';
+import { NgClassComponent } from './Directive/attribute/ng-class/ng-class.component';
+import { CustomDirective } from './Directive/custom.directive';
+import { TemplateFormComponent } from './Forms/template-form/template-form.component';
+
 
 
 
@@ -13,7 +23,16 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent, 
     TestComponent, 
-    DatabindingComponent
+    DatabindingComponent,
+    NgifComponent,
+    ParentComponent,
+    ChildComponent,
+    NgforComponent,
+    NgSwitchComponent,
+    AttributeComponent,
+    NgClassComponent,
+    CustomDirective,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,

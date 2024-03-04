@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-switch.component.css']
 })
 export class NgSwitchComponent implements OnInit {
-
+ 
+  weather ='cloudy';
   constructor() { }
 
   ngOnInit(): void {

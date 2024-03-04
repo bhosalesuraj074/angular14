@@ -1,0 +1,20 @@
+<p>ng-for works!</p>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Song</th>
+      <th scope="col">Singer</th>
+      <th scope="col">ReleaseDate</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let song of songs; index as i">
+        <td>{{i+1}}</td>
+        <td>{{song.title}}</td>
+        <td>{{song.singer}}</td>
+        <td>{{song.releaseDate}}</td>
+    </tr>
+  </tbody>
+</table>

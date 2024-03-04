@@ -1,0 +1,5 @@
+<p>ng-class works!</p>
+<button (click)="toggleButtonState()" 
+[ngClass]="{'btn btn-primary' : isEnabled, 'btn-disabled': !isEnabled}">
+    {{isEnabled ? 'Enabled': 'Disabled'}}
+</button>
