@@ -12,7 +12,7 @@ export class TemplateFormComponent  {
 
   
   OnSubmit(myForm:NgForm){
-     console.log('Form Submitted', myForm.value);
+     console.log('Form Submitted', myForm);
      
   }
 
