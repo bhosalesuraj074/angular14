@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class=" col-md-6 shadow rounded  py-5 mt-5">
+            <h4 class="text-center text-bg-light text-info">Address Assignment</h4>
+            <div class="row py-4">
+                        <div class="col-md-6">
+                            <label for="">select country</label>
+                            <select name="country" class="form-control" [(ngModel)]="selectedCountryName" (change)="selectState()">
+                                <option value="" disabled selected>select a country</option>
+                                <option value="{{country}}" *ngFor="let country of countries">{{country}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6" *ngIf="setState">
+                            <label for="">select state</label>
+                            <select name="country" class="form-control" [(ngModel)]="selectedStateName" (change)="selectDistrict()">
+                                <option value="" disabled selected>select a state</option>
+                               <option value="{{state}}" *ngFor="let state of setState">{{state}}</option>
+                            </select>
+                       </div>
+
+                       <div class="col-md-6 mt-2" *ngIf="setDist">
+                            <label for="">select district</label>
+                            <select name="country" class="form-control" [(ngModel)]="selectedDistrictName" (change)="selectTaluka()">
+                                <option value="" disabled selected>select a district</option>
+                            <option value="{{dist}}" *ngFor="let dist of setDist">{{dist}}</option>
+                            </select>
+                       </div>
+
+                       <div class="col-md-6 mt-2" *ngIf="setTaluka">
+                        <label for="">select taluka</label>
+                        <select name="country" class="form-control" [(ngModel)]="selectedTalukaName" (change)="selectVillage()">
+                            <option value="" disabled selected>select a taluka</option>
+                        <option value="{{tal}}" *ngFor="let tal of setTaluka">{{tal}}</option>
+                        </select>
+                       </div>
+
+                       <div class="col-md-6 mt-2" *ngIf="setVillage">
+                        <label for="">select village</label>
+                        <select name="country" class="form-control" [(ngModel)]="selectedVillageName" >
+                            <option value="" disabled selected>select a village</option>
+                        <option value="{{village}}" *ngFor="let village of setVillage">{{village}}</option>
+                        </select>
+
+
+                        <button class="btn btn-success mt-4" (click)="showData()">Submit Data</button>
+                       </div>
+            </div>
+        </div>
+    </div>
+</div>
+
