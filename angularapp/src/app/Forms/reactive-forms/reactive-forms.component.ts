@@ -43,7 +43,7 @@ export class ReactiveFormsComponent implements OnInit {
     })
   }
   onSubmit(){
-    console.log(this.myReactiveForm);
+    console.log(this.myReactiveForm.value);
   }
    
   // custom validator function 
@@ -59,5 +59,9 @@ export class ReactiveFormsComponent implements OnInit {
 
   addHobby(){
     this.hobbiesFormArray.push(new FormControl(''));
+  }
+  removeHobby(index:number){
+    this.hobbiesFormArray.removeAt(index)
+    
   }
 }
