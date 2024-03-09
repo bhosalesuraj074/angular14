@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -9,7 +9,7 @@ import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/f
 export class ReactiveFormsComponent implements OnInit {
 
   myReactiveForm !:FormGroup;
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.createReactiveForm();
    }
 
@@ -23,11 +23,23 @@ export class ReactiveFormsComponent implements OnInit {
       'email': 'virbhdra@gmail.com'
     })
   }
+  // Getter for easier access to hobbies from array.
+  get hobbiesFormArray() {
+    return this.myReactiveForm.get('hobbies') as FormArray;
+   }
+   
   createReactiveForm() {
 
-    this.myReactiveForm = new FormGroup({
+    this.myReactiveForm = this.fb.group({
       'email': new FormControl('',[Validators.required, Validators.minLength(7), Validators.maxLength(50), this.EmailNotAllowed]),
-      'password': new FormControl('', [Validators.required])
+      'password': new FormControl('', [Validators.required]),
+      'address': this.fb.group({
+        'state': new FormControl(),
+        'district': new FormControl(),
+        'taluka': new FormControl(),
+        'village': new FormControl()
+      }),
+      hobbies :this.fb.array([])
     })
   }
   onSubmit(){
@@ -43,5 +55,9 @@ export class ReactiveFormsComponent implements OnInit {
       return {'emailNotAllowed': true};
     }
     return null
+  }
+
+  addHobby(){
+    this.hobbiesFormArray.push(new FormControl(''));
   }
 }
