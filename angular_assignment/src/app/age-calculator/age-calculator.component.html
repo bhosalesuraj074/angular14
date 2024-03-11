@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class=" col-md-8 shadow rounded  py-5 mt-5">
+            <h4 class="text-center text-bg-light text-info">Age Calculator</h4>
+            <div class="mt-4 mx-4 col-md-11">
+                <label for="date">select birth date</label>
+                <input type="date" [(ngModel)]="birthDate" name="birth-date" id="" class="form-control" (change)="calculateAge()">
+            </div>
+            <div class="text-center mt-4" *ngIf="nowAge">
+                  <h6 class="bg-light rounded">You are <small class="text-warning">{{nowAge}}</small> years old</h6>
+            </div>
+        </div>
+    </div>
+</div>
