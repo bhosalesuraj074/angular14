@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NgForComponent } from './Directives/structural Directive/ng-for/ng-for.component';
 import { StateVillageComponent } from './state_assignment/state-village/state-village.component';
 import { PassGenratorComponent } from './Password Generator/pass-genrator/pass-genrator.component';
+import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PassGenratorComponent } from './Password Generator/pass-genrator/pass-g
     TwoWayComponent,
     NgForComponent,
     StateVillageComponent,
-    PassGenratorComponent
+    PassGenratorComponent,
+    AgeCalculatorComponent
     
   ],
   imports: [
