@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { DemoService } from 'src/app/services/demo.service';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -9,7 +10,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Valid
 export class ReactiveFormsComponent implements OnInit {
 
   myReactiveForm !:FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private _demoService : DemoService) {
     this.createReactiveForm();
    }
 
@@ -18,6 +19,7 @@ export class ReactiveFormsComponent implements OnInit {
     //   'email': 'jalndhar@gmail.com',
     //   'password': '1234567'
     // });
+console.log(this._demoService.reverseString('Bhosale'));
 
     this.myReactiveForm.patchValue({
       'email': 'virbhdra@gmail.com'
@@ -32,7 +34,7 @@ export class ReactiveFormsComponent implements OnInit {
 
     this.myReactiveForm = this.fb.group({
       'email': new FormControl('',[Validators.required, Validators.minLength(7), Validators.maxLength(50), this.EmailNotAllowed]),
-      'password': new FormControl('', [Validators.required]),
+      'password': new FormControl('', [Validators.required], ),
       'address': this.fb.group({
         'state': new FormControl(),
         'district': new FormControl(),

@@ -7,13 +7,17 @@ import { TwoWayComponent } from './Data binding/two-way/two-way.component';
 import { FormsModule } from '@angular/forms';
 import { NgForComponent } from './Directives/structural Directive/ng-for/ng-for.component';
 import { StateVillageComponent } from './state_assignment/state-village/state-village.component';
+import { PassGenratorComponent } from './Password Generator/pass-genrator/pass-genrator.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TwoWayComponent,
     NgForComponent,
-    StateVillageComponent
+    StateVillageComponent,
+    PassGenratorComponent
+    
   ],
   imports: [
     BrowserModule,
