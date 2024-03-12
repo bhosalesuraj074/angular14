@@ -4,11 +4,41 @@
             <h4 class="text-center text-bg-light text-info">Password Generator</h4>
                     
              <div class="row mx-4">
-                <div class="col-md-6  ">
+                <div class="mt-1 ">
                    <label for="lenght">Enter the length</label>
-                   <input type="text" name="" id="lenght" [(ngModel)]="passLength" placeholder="enter the password length" class="form-control">
+                   <input type="number" class="border-1 " id="lenght" [(ngModel)]="passLength" placeholder="enter the password length" class="form-control" (change)="genratePasswod()">
                 </div> 
+                <div class="mt-4 row">
+                        <div class="col-md-1">
+                           <input type="checkbox" [(ngModel)]="alphabet" (change)="genratePasswod()">  
+                        </div>
+                        <div class="col">
+                            <p>include Alphabet</p>
+                        </div>
+                </div>
+                <div class="mt-1 row">
+                    <div class="col-md-1">
+                        <input type="checkbox" [(ngModel)]="num" (change)="genratePasswod()">  
+                     </div>
+                     <div class="col">
+                         <p>Include Numbers</p>
+                     </div>
                  
+                </div>
+                <div class="mt-1 row">
+                    <div class="col-md-1">
+                        <input type="checkbox" [(ngModel)]="special" (change)="genratePasswod()" >  
+                     </div>
+                     <div class="col">
+                         <p>Special characters</p>
+                     </div>
+                 
+             </div>
+             <div > 
+                    <div class="mt-5">
+                      <label for="genpass">Genrated password</label>
+                      <input type="text" name="" id="genpass" [(ngModel)]="password" class="form-control ">
+                    </div>
              </div>
         </div>
     </div>
