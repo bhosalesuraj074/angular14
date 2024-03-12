@@ -9,6 +9,8 @@ import { NgForComponent } from './Directives/structural Directive/ng-for/ng-for.
 import { StateVillageComponent } from './state_assignment/state-village/state-village.component';
 import { PassGenratorComponent } from './Password Generator/pass-genrator/pass-genrator.component';
 import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { MatSlideToggleModule } from '@angular/material';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { AgeCalculatorComponent } from './age-calculator/age-calculator.componen
     NgForComponent,
     StateVillageComponent,
     PassGenratorComponent,
-    AgeCalculatorComponent
+    AgeCalculatorComponent,
+    UserFormComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
