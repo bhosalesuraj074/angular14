@@ -10,7 +10,8 @@ import { StateVillageComponent } from './state_assignment/state-village/state-vi
 import { PassGenratorComponent } from './Password Generator/pass-genrator/pass-genrator.component';
 import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
 import { UserFormComponent } from './user-form/user-form.component';
-import { MatSlideToggleModule } from '@angular/material';
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,7 +29,11 @@ import { MatSlideToggleModule } from '@angular/material';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatSlideToggleModule
+    MatSliderModule,
+    BrowserAnimationsModule,
+    
+    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

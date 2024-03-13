@@ -16,6 +16,7 @@ import { NgClassComponent } from './Directive/attribute/ng-class/ng-class.compon
 import { CustomDirective } from './Directive/custom.directive';
 import { TemplateFormComponent } from './Forms/template-form/template-form.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -40,7 +41,8 @@ import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

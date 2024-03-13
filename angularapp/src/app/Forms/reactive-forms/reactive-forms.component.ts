@@ -14,7 +14,11 @@ export class ReactiveFormsComponent implements OnInit {
     this.createReactiveForm();
    }
 
+   
+
   ngOnInit(): void {
+
+    
     // this.myReactiveForm.setValue({
     //   'email': 'jalndhar@gmail.com',
     //   'password': '1234567'
