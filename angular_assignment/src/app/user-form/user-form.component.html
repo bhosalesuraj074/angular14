@@ -1,9 +1,39 @@
 <div class="container mt-5">
- <div class="row justify-content-center">
-     <div class="col-md-6 shadow rounded  py-5  mt-5">
-        <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-        <p>user-form works!</p>
-     </div>
- </div>
+    <div class="row justify-content-center">
+        <div class="col-md-12 shadow rounded  py-5  mt-5">
+            <div class="text-container">
+               <div class="text-center three-d-text">User Registration</div>
+            </div>
+ 
+            <div class="mt-5">
+                  <form formGroup= 'user'>
+                         <div class="row">
+                           <!-- // this div belongs to use profile  -->
+                            <div class="col-md-2">
+                                     <h2 class="font-italic"></h2>
+                            </div>   
+
+                          <!-- // this div belong to user details -->
+                          <div class="col-md-5" formGroupName="userDetails"> 
+                                 <h2 class="font-italic">User Details</h2>
+                                 <div>
+                                        <mat-form-field class="example-full-width" appearance="fill">
+                                              <mat-label>Favorite food</mat-label>
+                                              <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                        </mat-form-field>
+                                 </div>
+
+                          </div>
+
+                          <div class="col-md-5" formGroupName="account Details">
+                                   <h2 class="font-italic">AccountDetails</h2>
+                          </div>
+                               
+                              
+                         </div>
+                  </form>
+            </div> 
+        </div>
+    </div>
 </div>
 
