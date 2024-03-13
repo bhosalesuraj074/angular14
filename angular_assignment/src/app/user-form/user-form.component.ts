@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -7,22 +7,38 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-
-  constructor() { }
+  user !:FormGroup ;
+  textLength = 0
+  texts: string = '';
+  
+  selectedCountry = 'India'
+  constructor() {
+    this.createForm();
+   }
 
   ngOnInit(): void {
+   
   }
+  countries = [
+    { name: 'United States', code: '+1' },
+    { name: 'Canada', code: '+1' },
+    { name: 'United Kingdom', code: '+44' },
+    { name: 'Germany', code: '+49' },
+    { name: 'France', code: '+33' },
+    { name: 'India', code: '+91' },
+    // Add more countries as needed
+  ];
   
   createForm(){
         
-    user  : new  FormGroup({
+    this.user = new  FormGroup({
          'userDetails' : new FormGroup({
-                'fullName' : new FormControl(),
-                'birthday' : new FormControl(),
-                'gender' : new FormControl(),
-                'country' : new FormControl(),
+                'fullName' : new FormControl('', [Validators.required]),
+                'birthday' : new FormControl('', [Validators.required]),
+                'gender' : new FormControl('',[Validators.required]),
+                'country' : new FormControl('', [Validators.required]),
                 'phone'  : new FormControl(),
-                'bio' : new FormControl(),
+                'bio' : new FormControl('', [Validators.required]),
          }),
 
          'accountDetails' : new FormGroup({
@@ -35,5 +51,10 @@ export class UserFormComponent implements OnInit {
             
     })
   }
-
+  // bioTextCounter(){
+  //   this.textLength  = this .texts.length;
+  // }
+  selectCountryCode(){
+    
+  }
 }

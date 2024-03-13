@@ -21,3 +21,7 @@
     transform: rotateY(10deg);
     z-index: -1;
   }
+
+  .eleWidth{
+    width: 80%;
+  }

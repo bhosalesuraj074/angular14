@@ -6,7 +6,7 @@
             </div>
  
             <div class="mt-5">
-                  <form formGroup= 'user'>
+                  <form [formGroup] ="user">
                          <div class="row">
                            <!-- // this div belongs to use profile  -->
                             <div class="col-md-2">
@@ -14,18 +14,76 @@
                             </div>   
 
                           <!-- // this div belong to user details -->
-                          <div class="col-md-5" formGroupName="userDetails"> 
+                          <div class="col-md-5" formGroupName="userDetails" > 
                                  <h2 class="font-italic">User Details</h2>
-                                 <div>
-                                        <mat-form-field class="example-full-width" appearance="fill">
-                                              <mat-label>Favorite food</mat-label>
-                                              <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                 <div class="row" >
+
+                                    <div class="">
+                                        <mat-form-field class="eleWidth">
+                                           <mat-label>Full Name</mat-label>
+                                           <input matInput placeholder="Ex. Suraj"   formControlName="fullName">
                                         </mat-form-field>
+                                    </div>
+
+                                    <div class="mt-2">
+                                        <mat-form-field class="eleWidth">
+                                            <mat-label>Choose a BirthDate</mat-label>
+                                            <input matInput [matDatepicker]="picker" formControlName="birthday" >
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                          </mat-form-field>
+                                    </div>
+                                    <div class="mt-2">  
+                                        
+                                        <mat-form-field class="eleWidth">
+                                            <mat-label>Select an gender</mat-label>
+                                              <mat-select formControlName="gender">
+                                                <mat-option value="Male">Male</mat-option>
+                                                <mat-option value="Female">Female</mat-option>
+                                              </mat-select>
+                                          </mat-form-field>
+                                    </div>
+
+                                    <div class="mt-2">
+                                      <div class="row">
+                                          <div class="col-md-3">
+                                            <mat-form-field class="eleWidth">
+                                              <mat-label>Select country</mat-label>
+                                                <mat-select formControlName="country" [(ngModel)]="selectedCountry" (change)="selectCountryCode()">
+                                                  <mat-option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                          </div>
+                                            <div class="col">
+                                              <mat-form-field style="width: 73%;">
+                                                <mat-label>enter mobile number</mat-label>
+                                                <input matInput placeholder="Ex. 123457890"   formControlName="phone">
+                                             </mat-form-field>
+                                            
+                                          </div>
+
+                                      </div>
+                                    </div>
+
+
+                                    <div class="mt-2">
+                                      <mat-form-field class="eleWidth" style="height: 20%;">
+                                        <mat-label>tell me about yourself</mat-label>
+                                        <textarea matInput placeholder="Ex. about yourself" #bio [(ngModel)]="texts"  ></textarea>
+                                        <mat-hint>tell me about yourself</mat-hint>
+                                       
+                                          <mat-hint align="end">
+                                             {{bio.value.length}}/256
+                                            </mat-hint>
+                                       
+                                      </mat-form-field>
+                                    </div>    
+
                                  </div>
 
                           </div>
 
-                          <div class="col-md-5" formGroupName="account Details">
+                          <div class="col-md-5" formGroupName="accountDetails">
                                    <h2 class="font-italic">AccountDetails</h2>
                           </div>
                                

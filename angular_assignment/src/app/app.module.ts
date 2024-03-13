@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TwoWayComponent } from './Data binding/two-way/two-way.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgForComponent } from './Directives/structural Directive/ng-for/ng-for.component';
 import { StateVillageComponent } from './state_assignment/state-village/state-village.component';
 import { PassGenratorComponent } from './Password Generator/pass-genrator/pass-genrator.component';
@@ -12,6 +12,11 @@ import { AgeCalculatorComponent } from './age-calculator/age-calculator.componen
 import { UserFormComponent } from './user-form/user-form.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule, } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -22,16 +27,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StateVillageComponent,
     PassGenratorComponent,
     AgeCalculatorComponent,
-    UserFormComponent
+    UserFormComponent,
+
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule,    
     MatSliderModule,
     BrowserAnimationsModule,
-    
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSelectModule
+   
     
   
   ],
