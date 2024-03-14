@@ -10,8 +10,8 @@ export class UserFormComponent implements OnInit {
   user !:FormGroup ;
   textLength = 0
   texts: string = '';
-  
   selectedCountry = 'India'
+  setCountryCode = '+91 - ';
   constructor() {
     this.createForm();
    }
@@ -55,6 +55,11 @@ export class UserFormComponent implements OnInit {
   //   this.textLength  = this .texts.length;
   // }
   selectCountryCode(){
-    
+    this.setCountryCode = '';
+    console.log('selectedCountry : ', this.selectedCountry);
+    let cc= this.countries.filter(country =>{
+       return country.name == this.selectedCountry
+    })
+    this.setCountryCode = cc[0].code + ' - ';
   }
 }
