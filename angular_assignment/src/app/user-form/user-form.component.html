@@ -1,99 +1,215 @@
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-12 shadow rounded  py-5  mt-5">
-            <div class="text-container">
-               <div class="text-center three-d-text">User Registration</div>
-            </div>
- 
-            <div class="mt-5">
-                  <form [formGroup] ="user">
-                         <div class="row">
-                           <!-- // this div belongs to use profile  -->
-                            <div class="col-md-2">
-                                     <h2 class="font-italic"></h2>
-                            </div>   
+  <div class="row justify-content-center">
+      <div class="col-md-12 shadow rounded py-5 mt-5">
+          <div class="text-container">
+              <div class="text-center three-d-text">User Registration</div>
+          </div>
 
-                          <!-- // this div belong to user details -->
-                          <div class="col-md-5" formGroupName="userDetails" #UserDetails > 
-                                 <h2 class="font-italic">User Details</h2>
-                                 <div class="row" >
+          <div class="mt-5">
+              <form [formGroup]="user">
+                  <div class="row">
+                      <!-- // this div belongs to use profile  -->
+                      <div class="col-md-2">
+                          <h2 class="font-italic"></h2>
+                      </div>
 
-                                    <div class="">
-                                        <mat-form-field class="eleWidth">
-                                           <mat-label>Full Name</mat-label>
-                                           <input matInput placeholder="Ex. Suraj"   formControlName="fullName">
-                                        </mat-form-field>
-                                        <small *ngIf="!user.get('userDetails.fullname').valid && !user.get('userDetails.fullname').touched ">fullname required</small>
-                                        
-                                    </div>
+                      <!-- // this div belong to user details -->
+                      <div class="col-md-5" formGroupName="userDetails" >
+                          <h2 class="font-italic">User Details</h2>
+                          <div class="row">
 
-                                    <div class="mt-2">
-                                        <mat-form-field class="eleWidth">
-                                            <mat-label>Choose a BirthDate</mat-label>
-                                            <input matInput [matDatepicker]="picker" formControlName="birthday" >
-                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                            <mat-datepicker #picker></mat-datepicker>
-                                          </mat-form-field>
-                                    </div>
-                                    <div class="mt-2">  
-                                        
-                                        <mat-form-field class="eleWidth">
-                                            <mat-label>Select an gender</mat-label>
-                                              <mat-select formControlName="gender">
-                                                <mat-option value="Male">Male</mat-option>
-                                                <mat-option value="Female">Female</mat-option>
+                              <div class="">
+                                  <mat-form-field class="eleWidth">
+                                      <mat-label>Full Name</mat-label>
+                                      <input matInput placeholder="Ex. Suraj" formControlName="fullName">
+                                  </mat-form-field>
+                                  
+                                  <mat-error class="text-danger" *ngIf="!user.get('userDetails.fullName')?.valid && user.get('userDetails.fullName')?.touched">
+                                          <mat-error  *ngIf="user.get('userDetails.fullName')?.errors?.['required']">
+                                             please enter the full name
+                                          </mat-error>
+                                  </mat-error>
+                                  
+                              </div>
+
+                              <div class="mt-2">
+                                  <mat-form-field class="eleWidth">
+                                      <mat-label>Choose a BirthDate</mat-label>
+                                      <input matInput [matDatepicker]="picker" formControlName="birthday">
+                                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                      <mat-datepicker #picker></mat-datepicker>
+                                  </mat-form-field>
+                                  
+                                  <mat-error class="text-danger" *ngIf="!user.get('userDetails.birthday')?.valid && user.get('userDetails.birthday')?.touched">
+                                    <mat-error *ngIf="user.get('userDetails.birthday')?.errors?.['required']">
+                                        please select the birth-date
+                                     </mat-error>
+                                  </mat-error>
+
+                              </div>
+                              <div class="mt-2">
+
+                                  <mat-form-field class="eleWidth">
+                                      <mat-label>Select an gender</mat-label>
+                                      <mat-select formControlName="gender">
+                                          <mat-option value="Male">Male</mat-option>
+                                          <mat-option value="Female">Female</mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+
+                                  <mat-error class="text-danger" *ngIf="user.get('userDetails.gender')?.invalid && user.get('userDetails.gender')?.touched">
+                                    <mat-error *ngIf="user.get('userDetails.gender')?.errors?.['required']">
+                                     please select the gender
+                                    </mat-error>
+
+                                  </mat-error>
+                              </div>
+
+                              <div class="mt-2">
+                                  <div class="row">
+                                      <div class="col-md-3">
+                                          <mat-form-field class="eleWidth">
+                                              <mat-label>Select country</mat-label>
+                                              <mat-select formControlName="country" [(ngModel)]="selectedCountry" (selectionChange)="selectCountryCode()">
+                                                  <mat-option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</mat-option>
                                               </mat-select>
                                           </mat-form-field>
-                                    </div>
-
-                                    <div class="mt-2">
-                                      <div class="row">
-                                          <div class="col-md-3">
-                                            <mat-form-field class="eleWidth">
-                                              <mat-label>Select country</mat-label>
-                                                <mat-select  formControlName="country" [(ngModel)]="selectedCountry" (selectionChange)="selectCountryCode()">
-                                                  <mat-option value="{{country.name}}" *ngFor="let country of countries">{{country.name}}</mat-option>
-                                                </mat-select>
-                                            </mat-form-field>
-                                          </div>
-                                            <div class="col">
-                                              <mat-form-field style="width: 73%;">
-                                                <mat-label>enter mobile number</mat-label>
-                                                <input matInput placeholder="Ex. 123457890" [(ngModel)]="setCountryCode"   formControlName="phone">
-                                             </mat-form-field>
-                                            
-                                          </div>
-
                                       </div>
-                                    </div>
+                                      <div class="col">
+                                          <mat-form-field style="width: 73%;">
+                                              <mat-label>enter mobile number</mat-label>
+                                              <input matInput placeholder="Ex. 123457890" [(ngModel)]="setCountryCode" formControlName="phone">
+                                          </mat-form-field>
+                                          <mat-error class="text-danger" *ngIf="user.get('userDetails.phone')?.invalid && user.get('userDetails.phone')?.touched">
+                                            <mat-error *ngIf="user.get('userDetails.phone')?.errors?.['requiredNumber']">
+                                             please enter the phone number
+                                            </mat-error>
+                                            <mat-error *ngIf="user.get('userDetails.phone')?.errors?.['invalidNumber']">
+                                              phone number must be in 10 digit
+                                             </mat-error>
+                                          </mat-error>
+                                      </div>
+
+                                  </div>
+                              </div>
 
 
-                                    <div class="mt-2">
-                                      <mat-form-field class="eleWidth" style="height: 20%;">
-                                        <mat-label>tell me about yourself</mat-label>
-                                        <textarea matInput placeholder="Ex. about yourself" #bio [(ngModel)]="texts"  ></textarea>
-                                        <mat-hint>tell me about yourself</mat-hint>
-                                       
-                                          <mat-hint align="end">
-                                             {{bio.value.length}}/256
-                                            </mat-hint>
-                                       
-                                      </mat-form-field>
-                                    </div>    
+                              <div class="mt-2">
+                                  <mat-form-field class="eleWidth" style="height: 20%;">
+                                      <mat-label>tell me about yourself</mat-label>
+                                      <textarea matInput placeholder="Ex. about yourself" #bio [(ngModel)]="texts" formControlName="bio"></textarea>
+                                      <mat-hint>tell me about yourself</mat-hint>
 
-                                 </div>
+                                      <mat-hint align="end">
+                                          {{bio.value.length}}/256
+                                      </mat-hint>
+                                        
+                                      <mat-error class="text-danger" *ngIf="user.get('userDetails.bio')?.invalid && user.get('userDetails.bio')?.touched">
+                                        <mat-error *ngIf="user.get('userDetails.bio')?.errors?.['required']">
+                                         please tell about yourself
+                                        </mat-error>
+
+                                      </mat-error>
+                                  </mat-form-field>
+                              </div>
 
                           </div>
 
-                          <div class="col-md-5" formGroupName="accountDetails">
-                                   <h2 class="font-italic">AccountDetails</h2>
-                          </div>
-                               
-                              
-                         </div>
-                  </form>
-            </div> 
-        </div>
-    </div>
+                      </div>
+
+
+                      <!-- // this div is related to the user account details -->
+                      <div class="col-md-5" formGroupName="accountDetails">
+                          <h2 class="font-italic">AccountDetails</h2> 
+
+                         
+                         <!-- this div is belongs to the userName  -->
+                          <div class="mt-2">
+                            <mat-form-field class="eleWidth">
+                                <mat-label>Username</mat-label>
+                                <input matInput placeholder="Ex.bhosalesuraj74" formControlName="userName">
+                            </mat-form-field>
+                            
+                            <mat-error class="text-danger" *ngIf="!user.get('accountDetails.userName')?.valid && user.get('accountDetails.userName')?.touched">
+                                    <mat-error  *ngIf="user.get('accountDetails.userName')?.errors?.['required']">
+                                       please enter username
+                                    </mat-error>
+                                    <mat-error  *ngIf="user.get('accountDetails.userName')?.errors?.['minlength']">
+                                      username contain at least 5 charters 
+                                   </mat-error>
+                                   <mat-error  *ngIf="user.get('accountDetails.userName')?.errors?.['maxlength']">
+                                    username contain at least 25 charters 
+                                 </mat-error>
+                                 <mat-error  *ngIf="user.get('accountDetails.userName')?.errors?.['invalidUserName']">
+                                 special charters not allowed
+                               </mat-error>
+                            </mat-error>
+                            
+                        </div>
+ 
+                        <!-- this div belongs to the email  -->
+                      <div class="mt-2">
+                          <mat-form-field class="eleWidth">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Ex.bhosalesuraj074@gmail.com" formControlName="email">
+                        </mat-form-field>
+                        <mat-error class="text-danger" *ngIf="!user.get('accountDetails.email')?.valid && user.get('accountDetails.email')?.touched">
+                          <mat-error  *ngIf="user.get('accountDetails.email')?.errors?.['required']">
+                            email is required
+                          </mat-error>
+                         <mat-error  *ngIf="user.get('accountDetails.email')?.errors?.['invalidEmail']">
+                          please enter valid email 
+                       </mat-error>
+                        </mat-error>
+                      </div>
+
+                      <!-- this dev belongs to the password validation -->
+                       <div class="mt-2">
+                        <mat-form-field class="eleWidth">
+                           <mat-label>Password</mat-label>
+                           <input type="password" matInput #pass placeholder="please enter password" formControlName="password">
+                        </mat-form-field>
+                        <mat-error class="text-danger" *ngIf="!user.get('accountDetails.password')?.valid && user.get('accountDetails.password')?.touched">
+                          <mat-error  *ngIf="user.get('accountDetails.password')?.errors?.['required']">
+                            password is required
+                          </mat-error>
+                          <mat-error  *ngIf="user.get('accountDetails.password')?.errors?.['minlength']">
+                            password contains at least 5 charters
+                          </mat-error>
+                          <mat-error  *ngIf="user.get('accountDetails.password')?.errors?.['invalidPasswordFormat']">
+                            please use strong password, use $A8
+                          </mat-error>
+                        
+                        </mat-error> 
+
+                       </div>  
+
+                       <!-- this div belongs to confirm password  -->
+                       <div class="mt-2">
+                        <mat-form-field class="eleWidth">
+                           <mat-label>confirm password</mat-label>
+                           <input type="password" matInput placeholder="please enter password" formControlName="confirmPassword">
+                        </mat-form-field>
+                        <mat-error class="text-danger" *ngIf="!user.get('accountDetails.confirmPassword')?.valid && user.get('accountDetails.confirmPassword')?.touched">
+                          
+                       
+                          <mat-error  *ngIf="user.get('accountDetails.password')?.errors?.['invalidConfirmPassword']">
+                            password contains at least 5 charters
+                          </mat-error>
+                          
+                        
+                        </mat-error> 
+
+                       </div> 
+                      
+
+
+                      </div>
+
+
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 </div>
-
