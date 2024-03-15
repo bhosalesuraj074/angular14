@@ -25,3 +25,9 @@
   .eleWidth{
     width: 80%;
   }
+
+  .im{
+    height: 270px;
+    width: 175px;
+    border-radius: 50%;
+  }

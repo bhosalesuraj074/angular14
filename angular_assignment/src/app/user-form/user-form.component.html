@@ -1,4 +1,6 @@
-<div class="container mt-5">
+
+<div class="container-fluid mt-5">
+  <div class="container">
   <div class="row justify-content-center">
       <div class="col-md-12 shadow rounded py-5 mt-5">
           <div class="text-container">
@@ -9,8 +11,9 @@
               <form [formGroup]="user">
                   <div class="row">
                       <!-- // this div belongs to use profile  -->
-                      <div class="col-md-2">
-                          <h2 class="font-italic"></h2>
+                      <div class="col-md-2 px-2">
+                           <img class="im" src="../../assets/wolf.jpeg" alt="" srcset="">
+                          <h2 class="font-italic py-2 mx-4">Suraj Bhosale </h2>
                       </div>
 
                       <!-- // this div belong to user details -->
@@ -167,7 +170,7 @@
                        <div class="mt-2">
                         <mat-form-field class="eleWidth">
                            <mat-label>Password</mat-label>
-                           <input type="password" matInput #pass placeholder="please enter password" formControlName="password">
+                           <input matInput  placeholder="please enter password" formControlName="password">
                         </mat-form-field>
                         <mat-error class="text-danger" *ngIf="!user.get('accountDetails.password')?.valid && user.get('accountDetails.password')?.touched">
                           <mat-error  *ngIf="user.get('accountDetails.password')?.errors?.['required']">
@@ -188,22 +191,25 @@
                        <div class="mt-2">
                         <mat-form-field class="eleWidth">
                            <mat-label>confirm password</mat-label>
-                           <input type="password" matInput placeholder="please enter password" formControlName="confirmPassword">
+                           <input   matInput placeholder="please enter password" formControlName="confirmPassword">
                         </mat-form-field>
                         <mat-error class="text-danger" *ngIf="!user.get('accountDetails.confirmPassword')?.valid && user.get('accountDetails.confirmPassword')?.touched">
                           
-                       
-                          <mat-error  *ngIf="user.get('accountDetails.password')?.errors?.['invalidConfirmPassword']">
-                            password contains at least 5 charters
-                          </mat-error>
-                          
-                        
+                          <mat-error *ngIf="user.get('accountDetails.password')?.value !== user.get('accountDetails.confirmPassword')?.value">Both password are not same</mat-error>
                         </mat-error> 
-
                        </div> 
                       
 
-
+                      
+                       <!-- this div belongs to terms and condition -->
+                       <div class="mt-4">
+                        <section class="">
+                            <mat-checkbox class="example-margin">I accept terms and condition</mat-checkbox>
+                          </section>
+                       </div>
+                        
+                       <button type="submit" [disabled]="user.invalid" class="btn btn-success mt-4 px-5 rounded-3">Submit</button>
+                        
                       </div>
 
 
@@ -212,4 +218,5 @@
           </div>
       </div>
   </div>
+</div>
 </div>

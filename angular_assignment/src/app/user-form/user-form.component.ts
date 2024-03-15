@@ -12,6 +12,8 @@ export class UserFormComponent implements OnInit {
   texts: string = '';
   selectedCountry = 'India'
   setCountryCode = '+91 - ';
+
+  
   constructor() {
     this.createForm();
    }
@@ -46,7 +48,8 @@ export class UserFormComponent implements OnInit {
             'userName' : new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(25), this.validateUserName]),
             'email': new FormControl('', [Validators.required, this.validateEmail]),
             'password' : new FormControl('' ,[Validators.required,Validators.minLength(5), this.validatePassword]),
-            'confirmPassword' : new FormControl('', [Validators.required]),
+            'confirmPassword' : new FormControl('', [Validators.required,]),
+            'terms': new FormControl('')
          })
 
             
@@ -124,16 +127,6 @@ export class UserFormComponent implements OnInit {
   }
 
   
-  confirmPassword(confirmPassword: FormControl) : ValidationErrors | null
-  {
-    if(this.user != null){
-      if(this.user.get('accountDetails.password')?.value != confirmPassword.value)
-      {
-        return {invalidConfirmPassword : true};
-      }
-    }
 
-    return null
-  }
 
 }  
