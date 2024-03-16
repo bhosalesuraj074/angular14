@@ -17,9 +17,9 @@ import { CustomDirective } from './Directive/custom.directive';
 import { TemplateFormComponent } from './Forms/template-form/template-form.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
+import { RapidapiComponent } from './rapidapi/rapidapi.component';
+import { MatCardModule } from '@angular/material/card'; 
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -35,14 +35,17 @@ import { HttpClientModule } from '@angular/common/http';
     NgClassComponent,
     CustomDirective,
     TemplateFormComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    RapidapiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

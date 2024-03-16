@@ -1,0 +1,38 @@
+.example-card {
+    max-width: 275px;
+    transition: transform 0.3s;
+ }
+  
+ .example-card:hover {
+  /* height: 200px; Increased height when hovered over */
+  transform: scale(1.05);
+
+}
+
+.element:hover {
+ 
+}
+
+.element {
+ 
+}
+
+ img {
+  height: 150px ;
+  width: 250px;
+ }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  
+  }
+
+  mat-card-header{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
