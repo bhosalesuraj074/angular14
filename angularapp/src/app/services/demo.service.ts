@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, delay, of } from 'rxjs';
 import {HttpClient} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
@@ -30,4 +30,8 @@ export class DemoService {
     // making get call to web server(jsonplaceholder)
   return  this._httpClient.get('https://jsonplaceholder.typicode.com/users');
   }
+
+  getnumbers() {
+    return of([1,2,3,4,5,6,7]).pipe(delay(1000));
+   }
 }

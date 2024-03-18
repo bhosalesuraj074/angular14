@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
 import { MatCardModule } from '@angular/material/card'; 
 import {MatButtonModule} from '@angular/material/button';
+import { PipeExampleComponent } from './Pipes/pipe-example/pipe-example.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     CustomDirective,
     TemplateFormComponent,
     ReactiveFormsComponent,
-    RapidapiComponent
+    RapidapiComponent,
+    PipeExampleComponent
   ],
   imports: [
     BrowserModule,
