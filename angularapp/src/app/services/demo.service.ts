@@ -34,4 +34,9 @@ export class DemoService {
   getnumbers() {
     return of([1,2,3,4,5,6,7]).pipe(delay(1000));
    }
+
+   getUsers() : Observable<any> {
+
+    return  this._httpClient.get('https://jsonplaceholder.typicode.com/users');
+   }
 }

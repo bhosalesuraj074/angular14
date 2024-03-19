@@ -21,6 +21,8 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
 import { MatCardModule } from '@angular/material/card'; 
 import {MatButtonModule} from '@angular/material/button';
 import { PipeExampleComponent } from './Pipes/pipe-example/pipe-example.component';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { FilterpipeComponent } from './Pipes/filterpipe/filterpipe.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { PipeExampleComponent } from './Pipes/pipe-example/pipe-example.componen
     TemplateFormComponent,
     ReactiveFormsComponent,
     RapidapiComponent,
-    PipeExampleComponent
+    PipeExampleComponent,
+    FilterPipe,
+    FilterpipeComponent
   ],
   imports: [
     BrowserModule,
