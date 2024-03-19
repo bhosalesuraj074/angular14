@@ -18,9 +18,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
-
-@NgModule({
+import { WikipediaComponent } from './wikipedia/wikipedia.component';
+import {HttpClientModule} from '@angular/common/http'
+ @NgModule({
   declarations: [
     AppComponent,
     TwoWayComponent,
@@ -29,6 +29,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     PassGenratorComponent,
     AgeCalculatorComponent,
     UserFormComponent,
+    WikipediaComponent,
 
     
   ],
@@ -44,7 +45,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
    
     
   

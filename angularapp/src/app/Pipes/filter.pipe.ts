@@ -10,10 +10,14 @@ export class FilterPipe implements PipeTransform {
     console.log('filer pipe', value); // 10 users 
     console.log('search name', searchTearm);
     
-    return value.filter(function(search: any) {
+    let values= value.filter(function(search: any) {
       return search.name.toLowerCase().indexOf(searchTearm.toLowerCase()) > -1
     });
-   
+  if(values.length > 0){
+    return values;
+  }else{
+    return null;
   }
 
+}
 }
