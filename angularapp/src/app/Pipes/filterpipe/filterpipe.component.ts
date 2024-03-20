@@ -15,6 +15,9 @@ export class FilterpipeComponent implements OnInit {
    this._demoService.getUsers().subscribe(res => this.users = res);
   
   }
+  valueChanged(){
+    
+  }
 
 
 
