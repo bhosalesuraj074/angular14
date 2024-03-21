@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-12 shadow rounded py-5 mt-5">
+         <h2 class="text-center text-info bg-light rounded-4">GIPHY Assignment</h2>
+         <div class="mt-4">
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-9 ">
+                   <input type="text" name="" #searchGif class="form-control rounded-4 shadow" id="" placeholder="search for gif">
+                </div>
+                <div class="col">
+                    <button type="button" (click)="getGiphys(searchGif.value)" class="btn btn-success rounded-5 shadow "> search</button>
+                </div>
+              </div>
+         </div>
+            <div class="row mt-5">
+                <div class="col-md-3 shadow mb-3"  *ngFor="let img of gifs">
+                    <div class="card" style="width: 16rem;">
+                        <div class="card-body">
+                        <img class="card-img" src="{{img.images.downsized.url}}" alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+     </div>
+</div>

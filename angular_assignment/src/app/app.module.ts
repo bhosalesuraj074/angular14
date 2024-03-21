@@ -19,7 +19,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { WikipediaComponent } from './wikipedia/wikipedia.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { GiphyComponent } from './giphy/giphy.component'
  @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http'
     AgeCalculatorComponent,
     UserFormComponent,
     WikipediaComponent,
+    GiphyComponent,
 
     
   ],

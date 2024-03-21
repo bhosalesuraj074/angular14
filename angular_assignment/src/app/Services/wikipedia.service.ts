@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class WikipediaService {
  url = 'https://en.wikipedia.org/w/api.php';
-
  constructor(private _httpClient: HttpClient) {
 
    }

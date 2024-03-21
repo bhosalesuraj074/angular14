@@ -11,7 +11,7 @@ export class WikipediaComponent implements OnInit {
   constructor(private _wikipedia : WikipediaService) { }
 
   ngOnInit(){
-    this._wikipedia.get
+            
   }
 
 }

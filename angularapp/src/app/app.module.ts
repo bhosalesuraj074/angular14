@@ -27,6 +27,8 @@ import { Comp1Component } from './Subjet and behaviour observable/comp1/comp1.co
 import { Comp2Component } from './Subjet and behaviour observable/comp2/comp2.component';
 import { Comp3Component } from './Subjet and behaviour observable/comp3/comp3.component';
 import { Comp4Component } from './Subjet and behaviour observable/comp4/comp4.component';
+import { HomeComponent } from './Routing/home/home.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -50,16 +52,18 @@ import { Comp4Component } from './Subjet and behaviour observable/comp4/comp4.co
     Comp1Component,
     Comp2Component,
     Comp3Component,
-    Comp4Component
+    Comp4Component,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
