@@ -29,6 +29,9 @@ import { Comp3Component } from './Subjet and behaviour observable/comp3/comp3.co
 import { Comp4Component } from './Subjet and behaviour observable/comp4/comp4.component';
 import { HomeComponent } from './Routing/home/home.component';
 import { RouterModule } from '@angular/router';
+import { ProductsComponent } from './Routing/Product Routing/products/products.component';
+import { MobileComponent } from './Routing/Product Routing/mobile/mobile.component';
+import { LoginComponent } from './Routing/Product Routing/login/login.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import { RouterModule } from '@angular/router';
     Comp2Component,
     Comp3Component,
     Comp4Component,
-    HomeComponent
+    HomeComponent,
+    ProductsComponent,
+    MobileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
