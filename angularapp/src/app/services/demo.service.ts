@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, delay, of } from 'rxjs';
 import {HttpClient} from '@angular/common/http'
+import { Post } from '../Model/post';
 @Injectable({
   providedIn: 'root'
 })
@@ -39,4 +40,13 @@ export class DemoService {
 
     return  this._httpClient.get('https://jsonplaceholder.typicode.com/users');
    }
+
+   getPosts() : Observable<any> {
+
+    return this._httpClient.get('https://jsonplaceholder.typicode.com/posts');
+  }
+  
+  getPostById(id: any) : Observable<Post> {
+    return this._httpClient.get<Post>('https://jsonplaceholder.typicode.com/posts/' + id)
+  }
 }

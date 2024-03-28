@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-gradient-custom">
+    <div class="container-fluid">
+      <!-- Navbar Brand on the Left -->
+      <a class="navbar-brand" routerLink="home" routerLinkActive="active">
+        <i class="fas fa-shopping-cart"></i>
+        Shopify
+      </a>
+  
+      <!-- Navbar Toggler (for mobile) -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navbar Items on the Right -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="home" routerLinkActive="active">
+              <i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li class="nav-item dropdown" (mouseenter)="handleMouseEnter()" (mouseleave)="handleMouseLeave()">
+            <a
+              class="nav-link dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-shopping-bag"></i> Shopping
+            </a>
+            <ul class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
+              <li><a class="dropdown-item" routerLink="men">Men</a></li>
+              <li><a class="dropdown-item" routerLink="women">Women</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" routerLink="#">Electronics</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login">
+              <i class="fas fa-user"></i> Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <router-outlet></router-outlet>
+
+  

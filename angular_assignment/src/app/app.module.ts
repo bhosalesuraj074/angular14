@@ -20,7 +20,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { WikipediaComponent } from './wikipedia/wikipedia.component';
 import {HttpClientModule} from '@angular/common/http';
-import { GiphyComponent } from './giphy/giphy.component'
+import { GiphyComponent } from './giphy/giphy.component';
+import { ShoppingComponent } from './Routing/shopping/shopping.component';
+import { HomeComponent } from './Routing/home/home.component';
+import { MenComponent } from './Routing/men/men.component';
+import { WomenComponent } from './Routing/women/women.component';
+import { LoginComponent } from './Routing/login/login.component'
  @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +37,11 @@ import { GiphyComponent } from './giphy/giphy.component'
     UserFormComponent,
     WikipediaComponent,
     GiphyComponent,
+    ShoppingComponent,
+    HomeComponent,
+    MenComponent,
+    WomenComponent,
+    LoginComponent,
 
     
   ],

@@ -32,6 +32,8 @@ import { RouterModule } from '@angular/router';
 import { ProductsComponent } from './Routing/Product Routing/products/products.component';
 import { MobileComponent } from './Routing/Product Routing/mobile/mobile.component';
 import { LoginComponent } from './Routing/Product Routing/login/login.component';
+import { PostlistComponent } from './Routing/Posts (route paramter)/postlist/postlist.component';
+import { PostdetailsComponent } from './Routing/Posts (route paramter)/postdetails/postdetails.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { LoginComponent } from './Routing/Product Routing/login/login.component'
     HomeComponent,
     ProductsComponent,
     MobileComponent,
-    LoginComponent
+    LoginComponent,
+    PostlistComponent,
+    PostdetailsComponent
   ],
   imports: [
     BrowserModule,
